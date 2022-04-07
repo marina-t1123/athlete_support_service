@@ -12,7 +12,7 @@ class AthleteUser extends Model
     //athlete_usersテーブルをこのモデルで使用できるように指定する
     protected $table = 'athlete_users';
 
-    //fillableを使い、DBでの操作で値を変更したいカラムを指定する。
+    //fillableメソッドを使い、DBの操作で値を変更したいカラムを指定する。
     protected $fillable = ['name', 'affiliation', 'event', 'sex', 'age', 'tall', 'weight'];
 
     //リレーションをはる
