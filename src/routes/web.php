@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AthleteUserController;
+use App\Http\Controllers\MedicalHistoryController;
+use App\Http\Controllers\MedicalQuestionnaireController;
+use App\Http\Controllers\MedicalRecordController;
+use App\Http\Controllers\WorkoutPlanController;
 
 /*
 |--------------------------------------------------------------------------
