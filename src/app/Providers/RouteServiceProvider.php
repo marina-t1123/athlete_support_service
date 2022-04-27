@@ -17,7 +17,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/athleteUsers/index';
+    //ログイン後の遷移先を選手一覧ページに変更。
 
     /**
      * The controller namespace for the application.
