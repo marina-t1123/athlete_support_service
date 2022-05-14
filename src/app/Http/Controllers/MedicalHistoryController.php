@@ -2,84 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicalHistory;
 use Illuminate\Http\Request;
 
 class MedicalHistoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    //既往歴一覧ページを表示するアクション
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    //既往歴の新規登録ページを表示するアクション
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\MedicalHistory  $medicalHistory
-     * @return \Illuminate\Http\Response
-     */
-    public function show(MedicalHistory $medicalHistory)
-    {
-        //
-    }
+    //既往歴の新規登録を行うアクション
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\MedicalHistory  $medicalHistory
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MedicalHistory $medicalHistory)
-    {
-        //
-    }
+    //既往歴の編集ページを表示するアクション
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MedicalHistory  $medicalHistory
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, MedicalHistory $medicalHistory)
-    {
-        //
-    }
+    //既往歴の編集ページを行うアクション
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\MedicalHistory  $medicalHistory
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(MedicalHistory $medicalHistory)
-    {
-        //
-    }
+    //既往歴詳細ページを表示するアクション
+
+    //既往歴情報を削除するアクション}
 }

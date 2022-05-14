@@ -2,84 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WorkoutPlan;
 use Illuminate\Http\Request;
 
 class WorkoutPlanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    //トレーニングメニュー一覧ページを表示するアクション
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    //トレーニングメニューの新規登録ページを表示するアクション
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    //トレーニングメニューの新規登録を行うアクション
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\WorkoutPlan  $workoutPlan
-     * @return \Illuminate\Http\Response
-     */
-    public function show(WorkoutPlan $workoutPlan)
-    {
-        //
-    }
+    //トレーニングメニューの編集ページを表示するアクション
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\WorkoutPlan  $workoutPlan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(WorkoutPlan $workoutPlan)
-    {
-        //
-    }
+    //トレーニングメニューの編集ページを行うアクション
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\WorkoutPlan  $workoutPlan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, WorkoutPlan $workoutPlan)
-    {
-        //
-    }
+    //トレーニングメニュー詳細ページを表示するアクション
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\WorkoutPlan  $workoutPlan
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(WorkoutPlan $workoutPlan)
-    {
-        //
-    }
+    //トレーニングメニュー情報を削除するアクション
 }

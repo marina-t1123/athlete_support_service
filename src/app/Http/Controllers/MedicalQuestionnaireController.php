@@ -2,84 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicalQuestionnaire;
 use Illuminate\Http\Request;
 
 class MedicalQuestionnaireController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    //問診票一覧ページを表示するアクション
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    //問診票の新規登録ページを表示するアクション
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\MedicalQuestionnaire  $medicalQuestionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function show(MedicalQuestionnaire $medicalQuestionnaire)
-    {
-        //
-    }
+    //問診票の新規登録を行うアクション
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\MedicalQuestionnaire  $medicalQuestionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MedicalQuestionnaire $medicalQuestionnaire)
-    {
-        //
-    }
+    //問診票の編集ページを表示するアクション
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MedicalQuestionnaire  $medicalQuestionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, MedicalQuestionnaire $medicalQuestionnaire)
-    {
-        //
-    }
+    //問診票の編集ページを行うアクション
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\MedicalQuestionnaire  $medicalQuestionnaire
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(MedicalQuestionnaire $medicalQuestionnaire)
-    {
-        //
-    }
+    //問診票詳細ページを表示するアクション
+
+    //問診票情報を削除するアクション
 }

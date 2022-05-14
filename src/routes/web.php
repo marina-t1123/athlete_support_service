@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //選手一覧ページの表示するルーティング
 Route::get('/athleteUsers/index', [AthleteUserController::class, 'index'])->name('athleteUser.index');
