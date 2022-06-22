@@ -3,3 +3,6 @@
 
 @section('content')
 @component('components.athleteUsers.')
+
+@endcomponent
+@endsections
