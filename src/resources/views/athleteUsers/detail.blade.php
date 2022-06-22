@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-@component('components.athleteUser.athleteUserDetail', ['athleteUser' => $athleteUser]);
+@component('components.athleteUsers.athleteUserDetail', ['athleteUser' => $athleteUser]);
 
 @endcomponent
 @endsection
