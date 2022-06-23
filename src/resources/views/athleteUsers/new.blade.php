@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-@component('components.athleteUsers.')
+@component('components.athleteUsers.createAthleteUserForm')
 
 @endcomponent
 @endsections
