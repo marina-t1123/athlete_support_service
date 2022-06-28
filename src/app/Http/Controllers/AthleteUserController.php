@@ -47,6 +47,7 @@ class AthleteUserController extends Controller
         //その際にsessionメッセージを入れる
         return redirect('athleteUsers/index')->with('message', __('Registered.'));
     }
+
     //選手情報の編集ページを表示するアクション
     public function edit($id)
     {
@@ -65,7 +66,7 @@ class AthleteUserController extends Controller
         }
     }
 
-    //選手情報の編集ページを行うアクション
+    //選手情報の編集ページを表示するアクション
     public function update($id)
     {
         //getパラメータのidカラムの値が数字かどうか確認する
@@ -75,10 +76,77 @@ class AthleteUserController extends Controller
 
         }
     }
-    //選手情報一覧ページを表示するアクション
 
+    //選手情報一覧ページを表示するアクション
+    public function index(Request $request){
+
+        //検索フォームの入力値を変数keywordに格納
+        $keyword = $request->input('keyword');
+        //クエリ生成
+        $query = AthleteUser::query();
+        //AthleteUserクラス(モデル)に対して、queryメソッドを実行。クエリビルダーでクエリを組み立ててくれるようにする。
+
+        //もし、検索フォームで入力があった場合
+        if(!empty($keyword)){
+            $query->where('name', 'Like', "%{$keyword}%");
+            //AthleteUserモデルに対して、クエリビルダインスタンスのwhereメソッドを使う。
+            //WHERE句：テーブルデータの検索条件を指定するためのSQL構文。
+            //第一引数でカラム名、第二引数でDBがサポートしているオペレータ、第三引数にカラムに対して比較する値を指定する。
+            //AthleteUsersテーブルのnameカラムで選手検索フォームで入力した内容(選手登録で登録している名前)を持っているレコードを曖昧検索している
+            //LIKE句：ワイルドカード文字(%〇〇%)で指定した文字を使用して、曖昧検索を行うことができる。(〇〇を含む文字列を探すということ)
+        }
+
+        $athleteUsers = $query->get();
+        //変数athleteUsersに検索フォームで該当した選手情報があった場合はその選手情報を取得する。
+        //検索フォームで入力がなかった場合は登録されている全選手の情報を変数に格納する。
+
+        //選手のインスタンス(AthleteUser)をallメソッドを使って、全て取り出して変数に格納する。
+        return view('athleteUsers.index', compact('athleteUsers', 'keyword'));
+    }
 
     //選手情報詳細ページを表示するアクション
+    public function detail($id){
+        if(!ctype_digit($id)){
+            return redirect('/athleteUsers/index')->with(flash_message, __('Invalid operation was performed'));
+        }
+        $athleteUser = AthleteUser::find($id);
+
+        return view('athleteUsers.detail', ['athleteUser' => $athleteUser]);
+    }
 
     //選手情報を削除するアクション
+    public function destroy($id){
+        //GETパタメータ(削除する選手ID)が数字かチェックする
+        if(!ctype_digit($id)){
+            return redirect('/medicalRecords/new')->with('flash_message', __('Invalid operation was performed.'));
+        }
+
+        //削除する選手の既往歴データを取得して、削除する
+        //既往歴がコレクション形式で取得できるので繰り返し処理で、1つ1つ削除処理を実行する
+        AthleteUser::find($id)->medicalHistories->each(function ($medicalHistories) {
+            $medicalHistories->delete();
+        });
+
+        //削除する選手の問診票データを取得して削除する
+        AthleteUser::find($id)->medicalQuestionnaires->each(function ($medicalQuestionnaires) {
+            $medicalQuestionnaires->delete();
+        });
+
+        //削除する選手のカルテデータを取得して削除する
+        AthleteUser::find($id)->medicalRecords->each(function ($medicalRecords) {
+            $medicalRecords->delete();
+        });
+
+        //削除する選手のトレーニングメニューを削除する
+        AthleteUser::find($id)->workoutPlans->each(function ($workoutPlans) {
+            $workoutPlans->delete();
+        });
+
+        //選手に関連するデータを削除したら、最後に選手情報を削除する
+        AthleteUser::find($id)->delete();
+
+        //削除処理が終了後に新規選手登録画面にリダイレクトする
+        return redirect('/athleteUsers/new')->with('flash_message', __('Deleted athlete information.'));
+
+    }
 }
